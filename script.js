@@ -12,6 +12,33 @@ const pomoButton = document.getElementById('pomodoro');
 const shortBreakButton = document.getElementById('short-break');
 const longBreakButton = document.getElementById('long-break');
 
+//function to playClickSound
+function playClickSound (){
+    const sound = document.getElementById('click-sound');
+    if(sound){
+        sound.currentTime = 0.6;
+        sound.play();
+    }
+}
+//function to playAlarmSound
+function playAlarmSound (){
+    const sound = document.getElementById('alarm-sound');
+    if(sound){
+        sound.currentTime = 1;
+        sound.play();
+    }
+}
+
+function setBodyBackground(imageUrl) {
+    document.body.style.backgroundImage = `url(${imageUrl})`;
+}
+
+function clearButtonStyles() {
+    pomoButton.style.background = 'transparent';
+    shortBreakButton.style.background = 'transparent';
+    longBreakButton.style.background = 'transparent';
+}
+
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -33,6 +60,7 @@ function resetTimer() {
 
 // Start the countdown
 function startCountdown() {
+    playClickSound();
     if (isRunning) {
         resetTimer(); // If running, reset the timer
         return;
@@ -48,6 +76,7 @@ function startCountdown() {
             clearInterval(interval);
             timerElement.textContent = '00:00';
             isRunning = false; // Timer stopped
+            playAlarmSound();
             startButton.textContent = 'Start'; // Change button text back to 'Start'
         } else {
             remainingTime--;
@@ -60,21 +89,35 @@ function startCountdown() {
 function setPomodoro() {
     remainingTime = POMODORO_TIME;
     resetTimer();
+    clearButtonStyles();
+    pomoButton.style.background = 'rgba(255, 255, 255, 0.1)';
+    setBodyBackground('./assets/bg3.gif');
+    playClickSound();
 }
 
 // Set timer for Short Break
 function setShortBreak() {
     remainingTime = SHORT_BREAK_TIME;
     resetTimer();
+    clearButtonStyles();
+    shortBreakButton.style.background = 'rgba(255, 255, 255, 0.1)';
+    setBodyBackground('./assets/bg2.gif');
+    playClickSound();
+    
 }
 
 // Set timer for Long Break
 function setLongBreak() {
     remainingTime = LONG_BREAK_TIME;
     resetTimer();
+    clearButtonStyles();
+    longBreakButton.style.background = 'rgba(255, 255, 255, 0.1)'
+    setBodyBackground('./assets/bg1.gif');
+    playClickSound();
+    
 }
 
-// Attach event listeners to the buttons
+
 startButton.addEventListener('click', startCountdown);
 pomoButton.addEventListener('click', setPomodoro);
 shortBreakButton.addEventListener('click', setShortBreak);

@@ -3,6 +3,8 @@ body {
     background-size: cover; /* Ensures the GIF covers the whole screen */
     margin: 0;
     padding: 0;
+    transition: background-image 0.5s ease-in-out; /* Smooth transition */
+    color: white;
 }
  .container {
     display: flex;
@@ -11,8 +13,6 @@ body {
     text-align: center;
  }
   .nav {
-    
-    color: white;
     font-size: 30px;
     display: inline-block;
     text-align: center;
@@ -37,7 +37,6 @@ body {
     width:500px;
     align-items: center;
     text-align: center;
-    color: white;
     
     
   }
@@ -52,7 +51,14 @@ body {
     border: none;
     color: white;
     background: transparent;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    padding: 8px;
+    
   }
+  .but>button.pomodoro{
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+ 
   #time{
     font-size: 150px;;
     font-weight: bold;
@@ -61,17 +67,27 @@ body {
     padding: 5px;
   }
   .start>button{
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
     border: none;
     padding: 10px;
-    width: 150px;
-    font-size: 30px;
+    width: 140px;
+    font-size: 25px;
     color:rgb(173, 69, 69);
     backdrop-filter: blur(3px); /* Adjust the blur radius as needed */
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background to see the blur effect */
 
   }
+ /* .short-break-style{
+  background-color: rgba(255, 255, 255, 0.1);
+ }
+ .long-break-style{
+  background-color: rgba(255, 255, 255, 0.1);
+ }
+ .pomodoro-style{
+  background-color: rgba(255, 255, 255, 0.1);
+ } */
+
   /* .start>button:hover{
     background-color: azure;
   } */

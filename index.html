@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./assets/icon.png" type="image/x-icon">
 </head>
 
 <body>
+    <audio id="click-sound" src="./assets/button.mp3" preload="auto"></audio>
+    <audio id="alarm-sound" src="./assets/alarm.mp3" preload="auto"></audio>
     <div class="container">
         <div class="nav">
             <h1>Pomodoro</h1>
@@ -16,9 +19,9 @@
         <div class="middle">
             <div class="timer-container">
                 <div class="but">
-                    <button id="pomodoro">Pomodoro</button>
-                    <button id="short-break">Short Break</button>
-                    <button id="long-break">Long Break</button>
+                    <button id="pomodoro" class="pomodoro">Pomodoro</button>
+                    <button id="short-break" class="short-break">Short Break</button>
+                    <button id="long-break" class="long-break">Long Break</button>
                 </div>
                 <div id="time">
                     25:00
