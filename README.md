@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/7e01dfbd-5f0d-4c39-9ebe-7ab8e895e769)# Pomodoro Timer
+
 
 A simple Pomodoro timer built with HTML, CSS, and JavaScript. This timer includes functionality for Pomodoro sessions, short breaks, and long breaks. It demonstrates basic timer operations and event handling in JavaScript.
 
